@@ -1,0 +1,3 @@
+# Project Overview (A Personal Habit Tracker) 
+Daily Commit Forge is a web application designed to help users custom-build and maintain positive habits. It provides a clean and straightforward interface that allows users to define the habits they want to track. Users can then log their daily progress, and the application will visualise their consistency, focusing on streaks (How many days a habit is completed) to provide motivation. It creates a vibe of motivation, seriousness, action-oriented, and dynamic. It emphasises the accountability and the required daily action to maintain the progress. 
+
