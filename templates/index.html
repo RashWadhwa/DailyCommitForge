@@ -1,10 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+
 <style>
     /* Styling for the custom confirmation modal */
     .modal-overlay {
-        display: none; /* Hidden by default */
+        display: none; /* It keeps hidden by default */
         position: fixed;
         top: 0;
         left: 0;
@@ -103,7 +104,7 @@
             {% endfor %}
         </div>
     {% else %}
-        <!-- This shows when no habits exist -->
+        <!-- Show when no habits exist -->
         <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
             <p class="text-gray-600 text-lg">You haven't added any habits yet. Add one above to get started!</p>
         </div>

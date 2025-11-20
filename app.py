@@ -3,21 +3,19 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, g
 from datetime import date, timedelta
 
-# --- Configuration and Database Setup ---
-
 app = Flask(__name__)
 # Define the path to the database file (habits.db)
 app.config['DATABASE'] = os.path.join(app.root_path, 'habits.db') 
 app.secret_key = 'super_secret_key' # Needed for flash messages (optional)
 
 def get_db():
-    # Opens a new database connection if there is none yet for the current context.
+    # Opens a new database connection 
     if 'db' not in g:
         g.db = sqlite3.connect(
             app.config['DATABASE'],
             detect_types=sqlite3.PARSE_DECLTYPES
         )
-        # Set row factory to sqlite3.Row to access columns by name (e.g., habit['id'])
+        # Set row factory to sqlite3.Row to access columns by name 
         g.db.row_factory = sqlite3.Row
     return g.db
 
@@ -41,8 +39,6 @@ def initdb_command():
     init_db()
     print('Initialized the database.')
 
-# --- Streak Calculation Algorithm (Assessment 2) ---
-
 def calculate_streak(completion_dates, today): 
     # completion_dates must be a list of date objects, not strings/rows
     
@@ -52,10 +48,9 @@ def calculate_streak(completion_dates, today):
 
     dates = sorted(completion_dates)
     
-    # --- Check for completion today ---
+    # Check for completion today 
     is_completed_today = (today in dates)
 
-    # --- Current Streak Logic ---
     current_streak = 0
     date_to_check = today
     
@@ -74,17 +69,16 @@ def calculate_streak(completion_dates, today):
         # If neither today nor yesterday was completed, the current streak is 0.
         pass
         
-    # Iteratively count backwards from the determined start point
+    # Iteratively count backwards 
     while date_to_check in dates:
         current_streak += 1
         date_to_check -= timedelta(days=1)
         
-    # --- Longest Streak Logic --- 
     longest_streak = 0
     temp_streak = 0
     last_date = None
     
-    # This loop correctly finds the longest run of consecutive dates
+    # This loop finds the longest run of consecutive dates
     for d in dates:
         if last_date is None or d == last_date + timedelta(days=1):
             temp_streak += 1
@@ -98,8 +92,6 @@ def calculate_streak(completion_dates, today):
     is_due_today = not is_completed_today
 
     return current_streak, longest_streak, is_completed_today, is_due_today
-
-# --- Flask Routes ---
 
 @app.route('/')
 def index():
@@ -121,7 +113,7 @@ def index():
                 (habit['id'],)
             ).fetchall()
             
-            # CRITICAL FIX: The database driver is already parsing the date string into a date object
+            # It parsing the date string into a date object
             # because we set 'detect_types'. We just need to extract the date objects.
             completion_dates = [c['completion_date'] for c in completions_rows]
 
@@ -166,7 +158,7 @@ def add_habit():
         db.commit()
     except sqlite3.Error as e:
         print(f"Error adding habit: {e}")
-        # ADDED: Explicitly return a redirect even if an error occurs.
+        # Return a redirect even if an error occurs.
         return redirect(url_for('index'))
         
     return redirect(url_for('index'))
@@ -178,19 +170,19 @@ def complete_habit(habit_id):
     today_str = date.today().isoformat()
     
     try:
-        # This will insert the completion log for today.
+        # Insert the completion log for today.
         db.execute(
             "INSERT INTO completions (habit_id, completion_date) VALUES (?, ?)",
             (habit_id, today_str)
         )
         db.commit()
     except sqlite3.IntegrityError:
-        # Handles the case where the habit was already completed today (due to the UNIQUE constraint).
+        # Handles the case where the habit was already completed today (UNIQUE constraint).
         pass
     except sqlite3.Error as e:
         print(f"Error completing habit: {e}")
 
-    # After processing, redirect back to the index page to refresh the view
+    # Redirect back to the index page to refresh the view, after processing. 
     return redirect(url_for('index'))
 
 
