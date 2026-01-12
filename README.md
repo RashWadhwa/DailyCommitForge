@@ -19,8 +19,44 @@ DailyCommitForge is a minimalist habit-tracking web application designed to help
 ## 🛡️ Security & Environment
 This project uses environment variables to protect sensitive credentials. **Never commit your `.env` file.**
 
-1. Clone the repository.
-2. Create a `.env` file in the root directory:
-   ```text
-   MAIL_USERNAME=your-email@gmail.com
-   MAIL_PASSWORD=your-16-digit-app-password
+## **How to Get Started**
+Clone & Install:
+```
+Bash
+
+git clone <your-repo-url>
+pip install -r requirements.txt
+Environment Configuration:
+Create a .env file in the root directory.
+```
+
+## Add your MAIL_USERNAME and MAIL_PASSWORD (Gmail App Password).
+
+MAIL_USERNAME=your-email@gmail.com
+
+MAIL_PASSWORD=your-16-digit-app-password
+
+##**Database Setup:**
+
+The schema is automatically handled by SQLite3. Ensure the habits.db file is present in the root directory.
+
+## **Run the App:**
+```
+Bash
+
+flask run
+Navigate to http://127.0.0.1:5000 in your browser.
+```
+
+## 🧭 **Navigation Guide**
+
+**Registration:** Create an account with a valid email to receive streak reminders.
+
+**Dashboard:** Use the **"Add Habit"** card at the top to set your goals.
+
+**Habit Cards:** Click **"Mark Complete"** daily to grow your streak. Cards change colour (Red → Yellow → Green) as your streak increases.
+
+**Reminders:** To test the offline system, run python remind.py while you have uncompleted habits.
+
+
+  
