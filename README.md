@@ -49,15 +49,6 @@ pip install -r requirements.txt
 Environment Configuration:
 Create a .env file in the root directory.
 ```
-
-### Add your MAIL_USERNAME and MAIL_PASSWORD (Gmail App Password).
-
-MAIL_USERNAME=your-email@gmail.com
-
-MAIL_PASSWORD=your-16-digit-app-password
-
-### **Database Setup:**
-
 The schema is automatically handled by SQLite3. Ensure the habits.db file is present in the root directory.
 
 ### **Run the App:**
@@ -86,3 +77,31 @@ Navigate to http://127.0.0.1:5000 in your browser.
 
 **The Safety Net:** If you get busy and forget to "Oxygenate" or "Exercise," the Remind.py engine will nudge you in the evening to help you avoid breaking your streak.
   
+### Add your MAIL_USERNAME and MAIL_PASSWORD (Gmail App Password).
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-16-digit-app-password
+
+### Structure of the folder, including the hashing method applied for username and password.
+![](Images/folder-structure.png)
+
+### Homepage for registration and login for a new and existing users proving the authentication and authorisation logic.
+![](Images/registrationOfNewUser.png)
+![](Images/login-page.png)
+
+### Homepage of a user displaying tracking records (colour-coded) with completed habits.
+![](Images/All-in-one-colour-coded-display.png)
+
+### Multiple users created. Another page showing the tracking records of another user with their completed streak number.
+![](Images/Confirmation-of-habits-created-and-marked-done.png)
+
+### Confimation of message sent to new user reminding to complete their daily habit.
+![](Images/message-sent-successfully.png)
+
+### Confirmation of email received by the new user to complete their daily habit proving that the logic to send reminder succesfully worked.
+![](Images/email-reminder-proof.png)
+### **Database Setup:**
+
+### Confirmation of new record added in database by running SQL query in the terminal.
+![](Images/DB-checked-via-running-query.png)
+
+
