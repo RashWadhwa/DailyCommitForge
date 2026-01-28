@@ -1,10 +1,14 @@
 # **Project Title: DailyCommitForge** 🔨
 
+Student Name: Rash Paul Wadhwa Student ID: 25208400
+
 GitHub User Name: RashWadhwa
 
 [Link to video demo](https://youtu.be/yccNQAQQQfI)
 
 [Link to GitHub Repo](https://github.com/RashWadhwa/DailyCommitForge)
+
+---
 
 ## **Project Description**
 
@@ -33,6 +37,7 @@ I developed this application after studying the psychological habits of high per
 
 **Scribbling:** Journaling or "brain dumping" to clear mental clutter.
 
+---
 
 ## Features
 - **User Authentication**: Secure registration and login using Werkzeug password hashing.
@@ -68,6 +73,7 @@ Bash
 flask run
 Navigate to http://127.0.0.1:5000 in your browser.
 ```
+---
 
 ### 🧭 **Navigation Guide**
 
@@ -86,15 +92,17 @@ Navigate to http://127.0.0.1:5000 in your browser.
 **The Feedback Loop:** As you finish your Meditation and Scribbling, mark them as "Complete" to see your streak badge turn green.
 
 **The Safety Net:** If you get busy and forget to "Oxygenate" or "Exercise," the Remind.py engine will nudge you in the evening to help you avoid breaking your streak.
-  
+
 ### Add your MAIL_USERNAME and MAIL_PASSWORD (Gmail App Password).
 MAIL_USERNAME=your-email@gmail.com
 MAIL_PASSWORD=your-16-digit-app-password
 
+---
+
 ### Structure of the folder, including the hashing method applied for username and password.
 ![](Images/folder-structure.png)
 
-### Homepage for registration and login for a new and existing users proving the authentication and authorisation logic.
+### Homepage for registration and login for new and existing users, providing the authentication and authorisation logic.
 ![](Images/registrationOfNewUser.png)
 ![](Images/login-page.png)
 
@@ -104,14 +112,14 @@ MAIL_PASSWORD=your-16-digit-app-password
 ### Multiple users created. Another page showing the tracking records of another user with their completed streak number.
 ![](Images/Confirmation-of-habits-created-and-marked-done.png)
 
-### Confimation of message sent to new user reminding to complete their daily habit.
+### Confirmation of message sent to new user, reminding them to complete their daily habit.
 ![](Images/message-sent-successfully.png)
 
 ### Confirmation of email received by the new user to complete their daily habit proving that the logic to send reminder succesfully worked.
 ![](Images/email-reminder-proof.png)
 ### **Database Setup:**
 
-### Confirmation of new record added in database by running SQL query in the terminal.
+### Confirmation of new record added in the database by running SQL query in the terminal.
 ![](Images/DB-checked-via-running-query.png)
 
 
