@@ -7,7 +7,7 @@ DailyCommitForge is a minimalist habit-tracking web application designed to help
 
 The Inspiration Daily Commit Forge was born at the intersection of a **University Computing Technology Module** and a deep dive into **"Millionaire Mindset"** productivity podcasts watched on YouTube. I realised that the hardest part of adopting high-performance routines like **MOVERS** isn't the action itself—it's the consistency. I built this forge to serve as the digital accountability partner for anyone looking to master their morning routine.
 
-## **Project Philosophy: The MOVERS Framework**
+### **Project Philosophy: The MOVERS Framework**
 
 I developed this application after studying the psychological habits of high performers. The app is specifically designed to facilitate the **MOVERS** morning routine, a framework used by many to optimise mental and physical clarity:
 
@@ -24,28 +24,28 @@ I developed this application after studying the psychological habits of high per
 **Scribbling:** Journaling or "brain dumping" to clear mental clutter.
 
 
-## Features
+### Features
 - **User Authentication**: Secure registration and login using Werkzeug password hashing.
 - **Dynamic Habit Tracking**: Create, complete, and track streaks for custom habits.
 - **Visual Progress**: Bootstrap-powered UI with colour-coded badges based on current streaks.
 - **Offline Reminders**: A background Python script that sends email notifications if habits remain uncompleted.
 
-## Tech Stack
+### Tech Stack
 - **Backend**: Python, Flask
 - **Database**: SQLite3
 - **Frontend**: Jinja2, Bootstrap 5
 - **Automation**: SMTP with App Passwords and local Task Schedulers (Cron/Windows Task Scheduler)
 
-## Security & Environment
+### Security & Environment
 This project uses environment variables to protect sensitive credentials. **Never commit your `.env` file.**
 
-## **How to Get Started**
+### **How to Get Started**
 Clone & Install:
 ```
-Bash
-
-git clone <>
+git clone https://github.com/RashWadhwa/DailyCommitForge.git
+cd DailyCommitForge
 pip install -r requirements.txt
+
 Environment Configuration:
 Create a .env file in the root directory.
 ```
@@ -62,8 +62,6 @@ The schema is automatically handled by SQLite3. Could you make sure the habits? 
 
 ### **Run the App:**
 ```
-Bash
-
 flask run
 Navigate to http://127.0.0.1:5000 in your browser.
 ```
